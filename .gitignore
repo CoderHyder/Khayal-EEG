@@ -34,3 +34,4 @@ storage/logs/*
 !storage/auth/
 storage/auth/*
 !storage/auth/.gitkeep
+.vercel

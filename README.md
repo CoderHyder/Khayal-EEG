@@ -2,6 +2,8 @@
 
 Khayal Local is a local-only EEG imagined speech application for the fixed Khayal protocol. It decodes uploaded EDF sentence trials with a personalized Stage 1 DiffE checkpoint and local Stage 2 sentence selection.
 
+Website: https://khayal-eeg.vercel.app
+
 ## What This Repo Includes
 - Next.js local UI with authenticated profile flow
 - FastAPI Python inference service

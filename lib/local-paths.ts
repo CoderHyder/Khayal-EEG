@@ -2,15 +2,18 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
+const STORAGE_ROOT =
+  process.env.KHAYAL_STORAGE_ROOT ??
+  (process.env.VERCEL ? path.join("/tmp", "khayal-storage") : path.join(ROOT, "storage"));
 
 export const paths = {
   root: ROOT,
-  storageRoot: path.join(ROOT, "storage"),
-  baseModels: path.join(ROOT, "storage", "base_models"),
-  profilesRoot: path.join(ROOT, "storage", "profiles"),
-  sessionsRoot: path.join(ROOT, "storage", "sessions"),
-  logsRoot: path.join(ROOT, "storage", "logs"),
-  activeProfileRef: path.join(ROOT, "storage", "profiles", "active_profile.json")
+  storageRoot: STORAGE_ROOT,
+  baseModels: path.join(STORAGE_ROOT, "base_models"),
+  profilesRoot: path.join(STORAGE_ROOT, "profiles"),
+  sessionsRoot: path.join(STORAGE_ROOT, "sessions"),
+  logsRoot: path.join(STORAGE_ROOT, "logs"),
+  activeProfileRef: path.join(STORAGE_ROOT, "profiles", "active_profile.json")
 };
 
 export function profileDir(profileId: string): string {
